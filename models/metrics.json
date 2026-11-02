@@ -1,0 +1,368 @@
+{
+ "split": {
+  "escalation": {
+   "train_2023_2024": 5495,
+   "dev_2025": 4897,
+   "final_train_2023_2025": 10392,
+   "test_2026": 4284
+  },
+  "routing": {
+   "train_2023_2024": 5495,
+   "dev_2025": 4897,
+   "final_train_2023_2025": 10392,
+   "test_2026": 4281
+  }
+ },
+ "dev_comparison": [
+  {
+   "KPI": "Escalation Risk",
+   "Model": "Original Logistic Regression",
+   "Accuracy": 0.5550336940984276,
+   "Precision": 0.4946388261851016,
+   "Recall": 0.8187762727697337,
+   "F1": 0.6167106420404573,
+   "ROC_AUC": 0.6417170401091686
+  },
+  {
+   "KPI": "Escalation Risk",
+   "Model": "Balanced Logistic Regression",
+   "Accuracy": 0.4929548703287727,
+   "Precision": 0.4607257694074414,
+   "Recall": 0.9369453526389537,
+   "F1": 0.6177059276366436,
+   "ROC_AUC": 0.6415704447482932
+  },
+  {
+   "KPI": "Escalation Risk",
+   "Model": "Random Forest",
+   "Accuracy": 0.5311415152133959,
+   "Precision": 0.4798334634400208,
+   "Recall": 0.8612797758056983,
+   "F1": 0.6163101604278075,
+   "ROC_AUC": 0.6413989366497892
+  },
+  {
+   "KPI": "Routing Change Risk",
+   "Model": "Original Logistic Regression",
+   "Accuracy": 0.6140494180110272,
+   "Precision": 0.6318154583582983,
+   "Recall": 0.7613718411552347,
+   "F1": 0.6905697445972495,
+   "ROC_AUC": 0.6497392133799745
+  },
+  {
+   "KPI": "Routing Change Risk",
+   "Model": "Balanced Logistic Regression",
+   "Accuracy": 0.6024096385542169,
+   "Precision": 0.6774471755066839,
+   "Recall": 0.5671480144404332,
+   "F1": 0.6174101002161525,
+   "ROC_AUC": 0.6498369765385392
+  },
+  {
+   "KPI": "Routing Change Risk",
+   "Model": "Random Forest",
+   "Accuracy": 0.6113947314682459,
+   "Precision": 0.6194543951501791,
+   "Recall": 0.8115523465703971,
+   "F1": 0.7026097827785591,
+   "ROC_AUC": 0.6474259944770605
+  }
+ ],
+ "baseline_vs_final": [
+  {
+   "KPI": "Escalation Risk",
+   "Model": "Majority-class baseline",
+   "Accuracy": 0.5378151260504201,
+   "Precision": 0.0,
+   "Recall": 0.0,
+   "F1": 0.0,
+   "ROC_AUC": 0.5
+  },
+  {
+   "KPI": "Escalation Risk",
+   "Model": "Final Logistic Regression",
+   "Accuracy": 0.5553221288515406,
+   "Precision": 0.5112174693389171,
+   "Recall": 0.8631313131313131,
+   "F1": 0.6421191057674244,
+   "ROC_AUC": 0.6437708245650954
+  },
+  {
+   "KPI": "Routing Change Risk",
+   "Model": "Majority-class baseline",
+   "Accuracy": 0.5954216304601728,
+   "Precision": 0.5954216304601728,
+   "Recall": 1.0,
+   "F1": 0.7464128843338214,
+   "ROC_AUC": 0.5
+  },
+  {
+   "KPI": "Routing Change Risk",
+   "Model": "Final Logistic Regression",
+   "Accuracy": 0.6278906797477225,
+   "Precision": 0.6512658227848102,
+   "Recall": 0.8073754413495489,
+   "F1": 0.720966894377299,
+   "ROC_AUC": 0.6584196854809703
+  }
+ ],
+ "errors": {
+  "escalation": {
+   "predicted_urgency": [
+    {
+     "Group": "Medium",
+     "Cases": 2743,
+     "Actual_Rate": 46.9,
+     "Error_Rate": 50.5
+    },
+    {
+     "Group": "Low",
+     "Cases": 897,
+     "Actual_Rate": 30.5,
+     "Error_Rate": 32.9
+    },
+    {
+     "Group": "High",
+     "Cases": 644,
+     "Actual_Rate": 65.2,
+     "Error_Rate": 34.8
+    }
+   ],
+   "submission_channel": [
+    {
+     "Group": "Web",
+     "Cases": 3884,
+     "Actual_Rate": 46.2,
+     "Error_Rate": 44.1
+    },
+    {
+     "Group": "Phone",
+     "Cases": 276,
+     "Actual_Rate": 46.0,
+     "Error_Rate": 47.5
+    },
+    {
+     "Group": "Postal mail",
+     "Cases": 78,
+     "Actual_Rate": 47.4,
+     "Error_Rate": 50.0
+    },
+    {
+     "Group": "Referral",
+     "Cases": 46,
+     "Actual_Rate": 43.5,
+     "Error_Rate": 47.8
+    }
+   ]
+  },
+  "routing": {
+   "predicted_urgency": [
+    {
+     "Group": "Medium",
+     "Cases": 2742,
+     "Actual_Rate": 60.7,
+     "Error_Rate": 39.2
+    },
+    {
+     "Group": "Low",
+     "Cases": 896,
+     "Actual_Rate": 45.6,
+     "Error_Rate": 39.0
+    },
+    {
+     "Group": "High",
+     "Cases": 643,
+     "Actual_Rate": 73.9,
+     "Error_Rate": 26.3
+    }
+   ],
+   "submission_channel": [
+    {
+     "Group": "Web",
+     "Cases": 3882,
+     "Actual_Rate": 59.6,
+     "Error_Rate": 37.3
+    },
+    {
+     "Group": "Phone",
+     "Cases": 275,
+     "Actual_Rate": 60.0,
+     "Error_Rate": 35.3
+    },
+    {
+     "Group": "Postal mail",
+     "Cases": 78,
+     "Actual_Rate": 59.0,
+     "Error_Rate": 43.6
+    },
+    {
+     "Group": "Referral",
+     "Cases": 46,
+     "Actual_Rate": 54.3,
+     "Error_Rate": 28.3
+    }
+   ],
+   "recommended_department_id": [
+    {
+     "Group": "D02",
+     "Cases": 3623,
+     "Actual_Rate": 56.1,
+     "Error_Rate": 40.0
+    },
+    {
+     "Group": "D05",
+     "Cases": 169,
+     "Actual_Rate": 80.5,
+     "Error_Rate": 19.5
+    },
+    {
+     "Group": "D04",
+     "Cases": 169,
+     "Actual_Rate": 74.0,
+     "Error_Rate": 26.0
+    },
+    {
+     "Group": "D01",
+     "Cases": 164,
+     "Actual_Rate": 82.3,
+     "Error_Rate": 17.7
+    },
+    {
+     "Group": "D03",
+     "Cases": 156,
+     "Actual_Rate": 76.9,
+     "Error_Rate": 23.1
+    }
+   ]
+  }
+ },
+ "importance": {
+  "escalation": [
+   {
+    "Predictor": "escalation_probability",
+    "Importance": 0.08589118178310885
+   },
+   {
+    "Predictor": "predicted_urgency",
+    "Importance": 0.01211104096520763
+   },
+   {
+    "Predictor": "prior_complaint_count",
+    "Importance": 0.005530215347923651
+   },
+   {
+    "Predictor": "available_capacity",
+    "Importance": 0.00036530671296294284
+   },
+   {
+    "Predictor": "submission_channel",
+    "Importance": 0.0003112066849045747
+   },
+   {
+    "Predictor": "current_workload",
+    "Importance": 1.0017711840604181e-05
+   },
+   {
+    "Predictor": "known_financial_impact",
+    "Importance": -0.0010196803100449125
+   },
+   {
+    "Predictor": "issue",
+    "Importance": -0.0012772692199775725
+   }
+  ],
+  "routing": [
+   {
+    "Predictor": "escalation_probability",
+    "Importance": 0.06319276136908294
+   },
+   {
+    "Predictor": "recommended_department_id",
+    "Importance": 0.059587081652271466
+   },
+   {
+    "Predictor": "predicted_urgency",
+    "Importance": 0.008914762570477863
+   },
+   {
+    "Predictor": "prior_complaint_count",
+    "Importance": 0.004727638516032739
+   },
+   {
+    "Predictor": "available_capacity",
+    "Importance": 0.0017104928165463495
+   },
+   {
+    "Predictor": "submission_channel",
+    "Importance": 0.0006981635691033939
+   },
+   {
+    "Predictor": "known_financial_impact",
+    "Importance": -0.00011633416899431426
+   },
+   {
+    "Predictor": "current_workload",
+    "Importance": -0.0002499961493751646
+   },
+   {
+    "Predictor": "issue",
+    "Importance": -0.0005008983281039492
+   }
+  ]
+ },
+ "confusion": {
+  "escalation": {
+   "TN": 670,
+   "FP": 1634,
+   "FN": 271,
+   "TP": 1709
+  },
+  "routing": {
+   "TN": 630,
+   "FP": 1102,
+   "FN": 491,
+   "TP": 2058
+  }
+ },
+ "flag_rate": {
+  "escalation": 0.7803454715219421,
+  "routing": 0.7381452931558047
+ },
+ "base_rate": {
+  "escalation": 0.46218487394957986,
+  "routing": 0.5954216304601728
+ },
+ "thresholds": {
+  "escalation": 0.35,
+  "routing": 0.5
+ },
+ "retained_model": "Original Logistic Regression",
+ "score_only_auc": {
+  "escalation": 0.6400894798681256,
+  "routing": 0.6212189130003434
+ },
+ "workload_capacity": {
+  "slope": -11.37487319591446,
+  "intercept": 98.80529486466303,
+  "resid_sd": 7.389968820633778
+ },
+ "ranges": {
+  "current_workload": [
+   4.58,
+   16.4
+  ],
+  "available_capacity": [
+   0.0,
+   65.0
+  ],
+  "known_financial_impact": [
+   3.66,
+   50000.0
+  ],
+  "prior_complaint_count": [
+   0.0,
+   4.0
+  ]
+ }
+}
