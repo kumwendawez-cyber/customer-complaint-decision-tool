@@ -10,7 +10,7 @@ from app_utils import (load_artifact, predict, predict_many, explain, validate, 
                        build_summary, changed_inputs, LABELS, KPI_NAMES, ADJUSTABLE)
 from pipeline import build_queue
 
-DATA_DIR = os.environ.get("COMPLAINT_DATA_DIR", "data")
+DATA_DIR = os.environ.get("COMPLAINT_DATA_DIR", "Data")
 st.set_page_config(page_title="Complaint Decision Support", layout="wide")
 
 
