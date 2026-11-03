@@ -25,7 +25,7 @@ def load_data(folder="Data"):
             r("outcomes"), r("departments"))
 
 
-def build_datasets(folder="data"):
+def build_datasets(folder="Data"):
     complaints, ctx, pred, out, dept = load_data(folder)
     base = (complaints[["complaint_id", "date_received", "issue", "submission_channel"]]
             .merge(ctx[["complaint_id", "prior_complaint_count", "known_financial_impact",
@@ -71,7 +71,7 @@ def metrics(y, prob, thr):
                 Recall=recall_score(y, pred), F1=f1_score(y, pred), ROC_AUC=roc_auc_score(y, prob))
 
 
-def build_queue(folder="data", year=2026):
+def build_queue(folder="Data", year=2026):
     """Complaints for the review queue. Outcomes are NOT loaded (they are unknown at review time)."""
     complaints, ctx, pred, out, dept = load_data(folder)
     q = (complaints[["complaint_id", "date_received", "product", "issue", "sub_issue", "submission_channel"]]
