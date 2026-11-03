@@ -38,7 +38,7 @@ To keep the data elsewhere, set `COMPLAINT_DATA_DIR=/path/to/folder` before runn
 ## Data access
 
 Required files in `Data/`: `complaints.csv`, `decision_context.csv`, `predictions.csv`, `outcomes.csv`, `departments.csv`.
-Some operational and outcome variables are synthetic. **[Team: state here which files are included in the repository and, for any restricted file, who to contact and how to request access.]**
+Some operational and outcome variables are synthetic. The five CSV files are included in the `Data/` folder of this repository. Some operational and outcome variables are synthetic. No restricted or confidential data is included.
 Never commit restricted or confidential data to a public repository.
 
 ## How the data is split (chronological, by `date_received` year)
