@@ -10,6 +10,9 @@ The tool estimates two risks per complaint to help the manager decide where to l
 | Routing Change Risk | final department ≠ recommended department | 50% |
 
 It supports, and never replaces, the manager's judgment.
+   ## Version history
+   - **Week_10/**: original Week 10 submission, unchanged.
+   - **Main folder (Week 11)**: updated application and evaluation (chronological split, baselines, error analysis, Random Forest and Balanced Logistic comparison, what-if comparison with input checks, reliability tab) and the revised report.
 
 ## Folder contents
 
