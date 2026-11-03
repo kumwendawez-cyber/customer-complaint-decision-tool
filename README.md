@@ -28,7 +28,7 @@ It supports, and never replaces, the manager's judgment.
 ```bash
 python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-# put the five CSV files in ./data (see below)
+# put the five CSV files in ./Data (see below)
 python train.py            # ~1 minute; recreates models/ (required if your scikit-learn version differs)
 streamlit run app.py
 ```
@@ -37,7 +37,7 @@ To keep the data elsewhere, set `COMPLAINT_DATA_DIR=/path/to/folder` before runn
 
 ## Data access
 
-Required files in `data/`: `complaints.csv`, `decision_context.csv`, `predictions.csv`, `outcomes.csv`, `departments.csv`.
+Required files in `Data/`: `complaints.csv`, `decision_context.csv`, `predictions.csv`, `outcomes.csv`, `departments.csv`.
 Some operational and outcome variables are synthetic. **[Team: state here which files are included in the repository and, for any restricted file, who to contact and how to request access.]**
 Never commit restricted or confidential data to a public repository.
 
