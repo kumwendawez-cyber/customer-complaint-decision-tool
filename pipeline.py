@@ -19,7 +19,7 @@ ESC_THRESHOLD = 0.35     # fixed in Week 10, before the 2026 evaluation
 ROUTE_THRESHOLD = 0.50
 
 
-def load_data(folder="data"):
+def load_data(folder="Data"):
     r = lambda f: pd.read_csv(f"{folder}/{f}.csv")
     return (r("complaints"), r("decision_context"), r("predictions"),
             r("outcomes"), r("departments"))
