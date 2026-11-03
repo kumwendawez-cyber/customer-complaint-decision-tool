@@ -19,7 +19,7 @@ from sklearn.metrics import (confusion_matrix, accuracy_score, precision_score,
 from pipeline import (build_datasets, make_model, metrics, NUMERIC, CAT_ESC, CAT_ROUTE,
                       ESC_FEATURES, ROUTE_FEATURES, ESC_THRESHOLD, ROUTE_THRESHOLD)
 
-DATA_DIR = os.environ.get("COMPLAINT_DATA_DIR", "data")
+DATA_DIR = os.environ.get("COMPLAINT_DATA_DIR", "Data")
 esc, route, dept = build_datasets(DATA_DIR)
 os.makedirs("models", exist_ok=True)
 
