@@ -20,7 +20,7 @@ It supports, and never replaces, the manager's judgment.
 | `pipeline.py` | Data preparation, predictors, model definitions, metrics |
 | `train.py` | Compares models on 2025 data, trains the final models, runs the 2026 test, writes `models/` |
 | `models/` | `final_models.joblib` and `metrics.json` (created by `train.py`) |
-| `data/` | CSV input files (see "Data access") |
+| `Data/` | CSV input files (see "Data access") |
 | `requirements.txt` | Dependencies |
 
 ## Setup
