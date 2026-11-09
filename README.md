@@ -40,9 +40,73 @@ To keep the data elsewhere, set `COMPLAINT_DATA_DIR=/path/to/folder` before runn
 
 ## Data access
 
-Required files in `Data/`: `complaints.csv`, `decision_context.csv`, `predictions.csv`, `outcomes.csv`, `departments.csv`.
-Some operational and outcome variables are synthetic. The five CSV files are included in the `Data/` folder of this repository. Some operational and outcome variables are synthetic. No restricted or confidential data is included.
-Never commit restricted or confidential data to a public repository.
+## Synthetic Data Generation and Validation
+
+### 1. Original Source Data
+
+The project uses complaint information from the Consumer Financial Protection Bureau (CFPB) Consumer Complaint Database.
+
+The original CFPB CSV file is the input to the data-generation script. It is different from the five generated application CSV files stored in the `Data/` folder.
+
+The generator uses the original complaint records and creates synthetic operational information for the decision-support simulation.
+
+### 2. Generate the Synthetic Database
+
+Required Python packages are listed in `requirements.txt`.
+
+Run the generator using the path to the original CFPB CSV file:
+
+```bash
+python generate_dataset.py "path/to/cfpb_complaints_raw.csv"
+```
+
+The generator creates synthetic customer records, complaint timestamps, department capacity, decision context, predictions, manager decisions, workflow events, and outcomes.
+
+The random seed is fixed to support reproducibility.
+
+### 3. Generated Files
+
+The generator creates:
+
+- `customer_complaints.db` – SQLite database containing nine related tables.
+- `database_schema.sql` – SQL database structure.
+- `database_validation_summary.txt` – Database validation summary.
+- `customer_complaints_project/` – CSV exports of all nine database tables and the main database files.
+- `customer_complaints_project_complete.zip` – Complete export package.
+
+The five CSV files in `Data/` are the application inputs. They should not be confused with the original CFPB source file.
+
+### 4. Independent Data Validation
+
+The project includes a separate validation script, `validate_data.py`, to check database integrity and logical consistency.
+
+Run:
+
+```bash
+python validate_data.py customer_complaints.db
+```
+
+The independent validation completed 24 checks with zero failures on the generated database.
+
+Checks include:
+
+- Required tables and SQLite database integrity.
+- Primary-key and foreign-key consistency.
+- Complaint-level record counts.
+- Complaint, prediction, and decision timestamps.
+- Workflow event chronology and status consistency.
+- Escalation and resolution consistency.
+- Final department and resolution-time consistency.
+- Historical capacity availability.
+- Prediction probability ranges and nonnegative values.
+
+### 5. Data Limitations
+
+The project combines CFPB complaint information with synthetic operational and outcome variables. Customer identifiers, staffing, workload, capacity, predictions, manager decisions, workflow events, resolution times, and handling costs are simulated.
+
+Complaint narratives were not available in the source data and were retained as missing rather than artificially generated.
+
+The dataset is designed for an academic decision-support prototype. Its validation demonstrates structural and logical consistency, not independent real-world statistical validity or operational performance.
 
 ## How the data is split (chronological, by `date_received` year)
 
