@@ -1,0 +1,75 @@
+CUSTOMER COMPLAINT DECISION-SUPPORT DATABASE
+FINAL VALIDATION SUMMARY
+
+Database file:
+/customer_complaints.db
+
+DATASET SUMMARY
+---------------
+Customers: 11,362
+Departments: 6
+Complaints: 14,677
+Decision Context Records: 14,677
+Predictions: 14,677
+Manager Decisions: 14,677
+Capacity Records: 39,288
+Complaint Events: 72,893
+Outcomes: 14,677
+
+OUTCOME SUMMARY
+---------------
+Closed: 13,202
+Resolved: 1,471
+Pending: 4
+Escalated: 6,435
+
+Average Resolution Time: 95.41 hours
+Average Handling Cost: $873.40
+
+DATABASE VALIDATION
+-------------------
+Foreign key errors: 0
+Missing required tables: 0
+Duplicate complaint IDs: 0
+Complaint date/timestamp mismatches: 0
+Invalid prediction times: 0
+Invalid decision times: 0
+Events before manager decision: 0
+Event/status mapping errors: 0
+Event chronology errors: 0
+Closed without resolved event: 0
+Closed before resolved event: 0
+True escalation without event: 0
+False escalation with escalation event: 0
+Final department mismatches: 0
+Outcome status errors: 0
+Resolution-time calculation errors: 0
+Missing historical capacity snapshots: 0
+Invalid probabilities: 0
+Negative-value violations: 0
+
+FINAL RESULT
+------------
+DATABASE PASSED
+Total critical errors: 0
+Named validation checks reported: 19
+
+DATA ORIGIN
+-----------
+Core complaint information was sourced from the CFPB consumer complaint dataset.
+Synthetic operational variables were generated for the academic decision-support simulation, including:
+- synthetic customer identifiers and customer types
+- complaint intake timestamps
+- financial impact
+- department staffing and workload
+- model predictions
+- manager decisions
+- complaint complexity and hidden risk
+- workflow events
+- escalation outcomes
+- resolution durations
+- internal handling costs
+
+The oracle ground-truth labels are generated in memory for simulation and evaluation;
+they are not persisted as a separate database table.
+Missing CFPB complaint narratives were preserved as NULL rather than artificially generated.
